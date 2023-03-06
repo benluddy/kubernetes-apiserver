@@ -77,5 +77,8 @@ func ExpectedNamespaceForResource(requestNamespace string, resource schema.Group
 	if resource.Resource == "namespaces" && resource.Group == "" {
 		return ""
 	}
+	if resource.Resource == "projects" && resource.Group == "project.openshift.io" {
+		return ""
+	}
 	return requestNamespace
 }
